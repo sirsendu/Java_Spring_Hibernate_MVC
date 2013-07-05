@@ -1,7 +1,9 @@
 package com.cc.app.service;
 
-public class NameService {
+import org.springframework.stereotype.Service;
 
+@Service
+public class NameService {
 	
 	public String getMyName() {
 		return "Sirsendu Konar";
