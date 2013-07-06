@@ -2,17 +2,26 @@ package com.cc.app.db;
 
 import java.math.BigDecimal;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * Domain entity.
  * 
  * @author Sirsendu Konar
  */
-
+@Entity
+@Table(name = "domain")
 public class Domain implements java.io.Serializable {
 
 	// Fields
-
+    @Id
+    @Column(name = "id", unique = true, nullable = false)
 	private BigDecimal id;
+    
+    @Column(name = "name", unique = true, nullable = false)
 	private String name;
 
 	// Constructors

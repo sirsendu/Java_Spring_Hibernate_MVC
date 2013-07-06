@@ -4,8 +4,10 @@ import java.util.List;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * A data access object (DAO) providing persistence and search support for Domain entities. Transaction control of the
@@ -16,18 +18,25 @@ import org.slf4j.LoggerFactory;
  * @see com.cc.app.Domain
  * @author Sirsendu Konar
  */
+@Transactional
 public class DomainDAO {
     private static final Logger log = LoggerFactory.getLogger(DomainDAO.class);
 
-    public Session getSession() {
-        return HibernateSessionFactory.getSession();
+    private SessionFactory sessionFactory;
+
+    public void setSessionFactory(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
+
+    private Session getCurrentSession() {
+        return sessionFactory.getCurrentSession();
     }
 
     public List findAll() {
         log.debug("finding all Domain instances");
         try {
             String queryString = "from Domain";
-            Query queryObject = getSession().createQuery(queryString);
+            Query queryObject = getCurrentSession().createQuery(queryString);
             return queryObject.list();
         } catch (RuntimeException re) {
             log.error("find all failed", re);
