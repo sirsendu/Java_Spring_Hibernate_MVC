@@ -4,6 +4,9 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
 	        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="nameService" class="com.cc.app.service.NameService" />
+	<bean id="domainDao" class="com.cc.app.db.DomainDAO" />
+	<bean id="nameService" class="com.cc.app.service.NameService">
+		<constructor-arg ref="domainDao" />
+	</bean>
 
 </beans>
