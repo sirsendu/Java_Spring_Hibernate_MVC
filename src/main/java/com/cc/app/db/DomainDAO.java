@@ -18,7 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
  * @see com.cc.app.Domain
  * @author Sirsendu Konar
  */
-@Transactional
+
 public class DomainDAO {
     private static final Logger log = LoggerFactory.getLogger(DomainDAO.class);
 

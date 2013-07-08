@@ -13,10 +13,14 @@ dependencies {
     compile group: 'org.springframework', name: 'spring-context', version: '4.3.7.RELEASE'
     compile group: 'org.springframework', name: 'spring-tx', version: '4.3.7.RELEASE'
     compile group: 'org.springframework', name: 'spring-orm', version: '4.3.7.RELEASE'
+    compile group: 'org.springframework', name: 'spring-webmvc', version: '4.3.7.RELEASE'
     compile group: 'org.hibernate', name: 'hibernate-core', version: '4.3.11.Final'
     compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.20'
     compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.41'
     // https://mvnrepository.com/artifact/commons-dbcp/commons-dbcp
     compile group: 'commons-dbcp', name: 'commons-dbcp', version: '1.4'
+    compile group: 'javax.servlet', name: 'servlet-api', version: '2.5'
+    compile group: 'javax.servlet.jsp', name: 'jsp-api', version: '2.1'
+	
     
 }

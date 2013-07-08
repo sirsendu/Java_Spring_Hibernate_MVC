@@ -1,8 +1,10 @@
 package com.cc.app.service;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import com.cc.app.db.Domain;
 import com.cc.app.db.DomainDAO;
-
+@Transactional
 public class NameService {
 
 	private final DomainDAO domainDao;
