@@ -3,7 +3,7 @@ package com.cc.app.service;
 public class NameService {
 
 	
-	public static String getMyName() {
+	public String getMyName() {
 		return "Sirsendu Konar";
 	}
 }
